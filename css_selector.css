@@ -1,0 +1,24 @@
+p {
+    text-align: left;
+    color: blue;
+}
+#center {
+    text-align: center;
+    color: green;
+}
+.center {
+    text-align: center;
+    color: red;
+}
+div.center {
+    text-align: center;
+    color: yellow
+}
+
+div span {
+    color: green;
+}
+
+div > span {
+    color: gray;
+}
