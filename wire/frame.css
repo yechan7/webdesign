@@ -36,6 +36,7 @@ nav {
     width: 600px;
     height: 60px;
     background-color: #999;
+    z-index: 100;
 }
 nav > ul {
     display: flex;
@@ -48,6 +49,7 @@ nav > ul > li > a {
 }
 .submenu {
     height: 0;
+    transition: 0.3s;
     overflow: hidden;
 }
 .submenu > li > a {
@@ -61,25 +63,82 @@ nav > ul:hover .submenu {
     height: 200px;
     transition: 0.3s;
 }
-nav > ul:hover .subbox {
+.sub-box {
+    position: absolute;
+    width: 100%;
+    top: 100px;
+    z-index: 99;
+    height: 0px;
+    transition: 0.3s;
+    background-color: #bbb;
+}
+#wrap:has(nav > ul:hover) .sub-box {
     height: 200px;
     transition: 0.3s;
 }
 nav a:hover {
     background-color: #c10820;
 }
-.subbox {
-    width: 100%;
-    height: 0px;
-    position: absolute;
-    background-color: #444;
-}
 
 /* visual */
 #visual {
+    position: relative;
     width: 100%;
     height: 350px;
+    overflow: hidden;
     background-color: #444;
+}
+.img-list {
+    position: absolute;
+    width: 100%;
+    height: 1050px;
+    animation: img-slide 9s infinite;
+}
+@keyframes img-slide {
+    0% {
+        top: 0;
+    }
+    22% {
+        top: 0;
+    }
+    33% {
+        top: -350px;
+    }
+    55% {
+        top: -350px;
+    }
+    66% {
+        top: -700px;
+    }
+    88% {
+        top: -700px;
+    }
+    100% {
+        top: -1050px;
+    }
+}
+.img-list li {
+    position: relative;
+    width: 100%;
+    height: 350px;
+}
+.img-list img {
+    width: 100%;
+    height: 350px;
+}
+.img-list h1 {
+    color: #e2e2e2;
+    font-size: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -80%);
+    width: 800px;
+    height: 150px;
+    text-align: center;
+    align-content: center;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* contents */
